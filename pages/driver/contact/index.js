@@ -24,10 +24,10 @@ function ChatBox(props) {
 }
 
 const chatData = [
-    { name: 'อธิชา เล็กสรรเสริญ', chat: 'มึงปาดหน้ารถกูออ' },
-    { name: '', chat: '' },
-    { name: '', chat: '' },
-    { name: '', chat: '' },
+    { name: 'อธิชา เล็กสรรเสริญ', chat: 'มึงปาดหน้ารถกูออ', id: '0' },
+    { name: '', chat: '', id: '1' },
+    { name: '', chat: '', id: '2' },
+    { name: '', chat: '', id: '3' },
 ]
 
 export default function DriverContact() {
@@ -36,7 +36,7 @@ export default function DriverContact() {
             <p className="text-xl ml-[10%]">ข้อความ</p>
         </div>
         {chatData.map((e, idx) => {
-            return <ChatBox key={e.name} name={e.name} message={e.chat} index={idx}/>
+            return <ChatBox key={e.name} name={e.name} message={e.chat} index={idx} />
         })}
         <DriverNavBar className='absolute bottom-0 w-full' />
     </div>);

@@ -32,10 +32,10 @@ export default function CustomerHome() {
             <div className="bg-white text-black w-[95%] m-auto mb-0 rounded-lg mt-2">
                 <div className="flex items-center">
                     <div className="w-full ml-5 m-auto py-3">
-                        <p>ข้อมูลคนขับมูล</p>
-                        <p>ชื่อ-นามสกุล</p>
-                        <p>เบอร์โทร</p>
-                        <p>ทะเบียนรถ</p>
+                        <p className="text-xl">ข้อมูลคนขับ</p>
+                        <p>ชื่อ-นามสกุล: อธิชา เล็กสรรเสริญ</p>
+                        <p>เบอร์โทร: 083-251-85XX</p>
+                        <p>ทะเบียนรถ: กก-6942</p>
                     </div>
                     <svg className="mr-10" width="71" height="68" viewBox="0 0 71 68" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_8_72)">
