@@ -1,6 +1,17 @@
 import Link from "next/link";
+import { useRouter } from 'next/router'
+import { useEffect, useState } from "react";
 
 export default function CustomerHome() {
+    const router = useRouter();
+    const { trackingId } = router.query;
+
+    const [id, setId] = useState();
+
+    useEffect(() => {
+        setId(trackingId);
+    }, [trackingId]);
+
     return (
         <div className="bg-primaryBase w-screen h-screen text-white">
             <div className="h-[8%] w-full bg-primaryMain flex items-center text-2xl relative">
@@ -10,7 +21,7 @@ export default function CustomerHome() {
                 </Link>
                 <p className="m-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">ลูกค้า</p>
             </div>
-            <p className="text-center text-1xl py-3">รหัสติดตาม: 1234-5678</p>
+            <p className="text-center text-1xl py-3">รหัสติดตาม: {id}</p>
             <div className="w-[95%] m-auto h-[63%]">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.327711346534!2d100.51212221454449!3d13.819349890303757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29b73a5a2880d%3A0xda92a156e9f2b465!2sKmutnb!5e0!3m2!1sen!2sth!4v1669735048987!5m2!1sen!2sth"
