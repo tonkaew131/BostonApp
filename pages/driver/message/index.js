@@ -1,7 +1,7 @@
 import DriverNavBar from "../../../components/DriverNavBar"
 export default function DriverHome() {
     return (
-        <div className="bg-messegeBox w-screen h-screen">
+        <div className="bg-white w-screen h-screen">
 
             <div className="bg-primaryMain w-full h-20 absolute top-0 flex justify-center ">
                 <svg className="my-auto mr-10" width="40" height="44" viewBox="0 0 40 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,16 +40,16 @@ export default function DriverHome() {
                     </svg>
                 </div>
 
-                <div className=" bg-messege_box w-56 h-32 rounded-md mt-32 ml-10 pt-5 pl-5">
-                    <p className="mb-5 underline text-black">อธิชา เล็กสรรเสริญ</p>
-                    <p className="text-black">ของส่งตรงเวลามากครับ</p>
+                <div className=" bg-black text-white w-56 h-32 rounded-md mt-32 ml-10 pt-5 pl-5">
+                    <p className="mb-5 underline">อธิชา เล็กสรรเสริญ</p>
+                    <p className="">ของส่งตรงเวลามากครับ</p>
                 </div>
             </div>
 
             <div className="flex justify-end mr-8">
-                <div className=" bg-messege_box w-32 h-24 rounded-md mt-32 ml-10 pt-5 pl-5">
-                    <p className="text-black underline">คุณ</p>
-                    <p className="text-black">ขอบคุณครับ</p>
+                <div className=" bg-black text-white w-32 h-24 rounded-md mt-32 ml-10 pt-5 pl-5">
+                    <p className="underline">คุณ</p>
+                    <p className="">ขอบคุณครับ</p>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@ export default function DriverHome() {
 
                     <div className=" h-16 bg-messege_box rounded-md mx-4">
                         <form>
-                            <input type="text" className="bg-messege_box w-60 h-16 rounded-md" placeholder="type something">
+                            <input type="text" className="bg-messege_box w-60 px-4 h-16 rounded-md text-black" placeholder="type something">
 
                             </input>
                         </form>
