@@ -10,6 +10,7 @@
     "export": "npx next build && npx next export",
     "android": "npx cap add android",
     "android:run": "npx cap run android",
+    "android:icon": "cordova-res android --skip-config --copy",
     "ios": "npx cap add ios",
     "sync": "npx cap sync"
   },
