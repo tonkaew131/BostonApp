@@ -1,6 +1,6 @@
 export default function DriverNavBar(props) {
     return (
-        <div className="flex bg-primaryMain text-white text-center">
+        <div className={`flex bg-primaryMain text-white text-center ${props.className}`}>
             <div className="w-[25%] py-2">
                 <svg className="m-auto" width="49" height="49" viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.66207 47.5034C6.66207 47.5034 6.6175 48.7331 7.68886 48.7331C9.02201 48.7331 20.0401 48.7164 20.0401 48.7164L20.0586 37.3558C20.0586 37.3558 19.8841 35.4843 21.5013 35.4843H26.6279C28.5422 35.4843 28.4252 37.3558 28.4252 37.3558L28.4029 48.6809C28.4029 48.6809 38.8528 48.6809 40.4942 48.6809C41.8533 48.6809 41.792 47.1512 41.792 47.1512V26.2016L24.7507 9.1889L6.66207 26.2037V47.5034Z" fill="#1036BC" />
