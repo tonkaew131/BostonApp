@@ -10,12 +10,13 @@
     "export": "npx next build && npx next export",
     "android": "npx cap add android",
     "android:run": "npx cap run android",
-    "android:icon": "cordova-res android --skip-config --copy",
+    "android:icon": "npx capacitor-assets generate --iconBackgroundColor '#00BDF8' --iconBackgroundColorDark '#00BDF8' --splashBackgroundColor '#1C1C1C' --splashBackgroundColorDark '#1C1C1C'",
     "ios": "npx cap add ios",
     "sync": "npx cap sync"
   },
   "dependencies": {
     "@capacitor/android": "^4.5.0",
+    "@capacitor/assets": "^2.0.4",
     "@capacitor/cli": "^4.5.0",
     "@capacitor/core": "^4.5.0",
     "@capacitor/ios": "^4.5.0",

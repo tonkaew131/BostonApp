@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">boston</string>
-    <string name="title_activity_main">boston</string>
-    <string name="package_name">com.tonkaew131.boston.app</string>
-    <string name="custom_url_scheme">com.tonkaew131.boston.app</string>
-</resources>
