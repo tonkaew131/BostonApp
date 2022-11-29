@@ -30,9 +30,11 @@ export default function DriverLogin() {
                     ></input>
                 </div>
                 <br />
+                <Link href="/driver/home">
                 <button className="text-white bg-black rounded-full px-10 py-3 m-auto flex">
                     เข้าสู่ระบบ
                 </button>
+                </Link>
             </div>
             <Link href="/">
                 <Image src={ReturnImage} alt="Return" className="absolute bottom-12 right-12 w-[10%]"></Image>
