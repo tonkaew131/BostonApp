@@ -1,8 +1,8 @@
 import DriverNavBar from "../../../components/DriverNavBar";
 
 function ChatBox(props) {
-    return (<div className="flex">
-        <div>
+    return (<div className={`flex ${props.index % 2 ? 'bg-gray-500' : 'bg-gray-600'} py-3`}>
+        <div className="mx-4">
             <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="39" cy="39" r="39" fill="#D9D9D9" />
                 <g clip-path="url(#clip0_0_1)">
@@ -15,11 +15,10 @@ function ChatBox(props) {
                     </clipPath>
                 </defs>
             </svg>
-
         </div>
-        <div>
-            <p>{props.name}</p>
-            <p>{props.message}</p>
+        <div className="text-white">
+            <p className="">{props.name}</p>
+            <p className="text-gray-400">{props.message}</p>
         </div>
     </div>)
 }
