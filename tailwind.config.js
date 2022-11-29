@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         'primaryBase': '#2D2D2D',
         'primaryMain': '#00BDF8',
+        'messegeBox' : '9CB8C8'
       }
     },
   },
