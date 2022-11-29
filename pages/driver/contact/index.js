@@ -2,7 +2,7 @@ import DriverNavBar from "../../../components/DriverNavBar";
 
 function ChatBox(props) {
     return (<div className={`flex ${props.index % 2 ? 'bg-gray-500' : 'bg-gray-600'} py-3`}>
-        <div className="mx-4">
+        <div className={`mx-4 ${props.name ? '' : 'opacity-0'}`}>
             <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="39" cy="39" r="39" fill="#D9D9D9" />
                 <g clip-path="url(#clip0_0_1)">
@@ -17,21 +17,22 @@ function ChatBox(props) {
             </svg>
         </div>
         <div className="text-white">
-            <p className="">{props.name}</p>
+            <p className="text-xl">{props.name}</p>
             <p className="text-gray-400">{props.message}</p>
         </div>
     </div>)
 }
 
 const chatData = [
-    { name: 'อธิชา เล็กสรรเสริญ', chat: 'มึงปาดหน้ารถกูออ', id: '0' },
-    { name: '', chat: '', id: '1' },
-    { name: '', chat: '', id: '2' },
-    { name: '', chat: '', id: '3' },
+    { name: 'อธิชา เล็กสรรเสริญ', chat: 'คุณพี่ปาดหน้ารถกระผมหรอ', id: '0' },
+    { name: 'พิขานนท์ ทวีพิยทนันท์', chat: 'ของมายังครับ', id: '1' },
+    { name: 'อุษณีย์​ โกมาศ', chat: 'สวัสดีค่ะ ใกล้่ถึงยังคะ', id: '2' },
+    { name: 'โมกข์ มาอาจ', chat: 'ขอบคุณมากครับ', id: '3' },
+    { name: 'พิรดา เธียรเจริญสุข', chat: 'จะถึงประมาณกี่โมงคะ', id: '4' },
 ]
 
 export default function DriverContact() {
-    return (<div className="w-screen h-screen bg-primaryBase">
+    return (<div className="w-screen h-screen bg-primaryBase overflow-y-scroll">
         <div className="text-white bg-primaryMain py-5">
             <p className="text-xl ml-[10%]">ข้อความ</p>
         </div>
