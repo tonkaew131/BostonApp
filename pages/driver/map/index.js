@@ -25,7 +25,7 @@ export default function DriverMap() {
                 </div>
 
             </div>
-            <DriverNavBar className='absolute w-full bottom-0 z-50' />
+            <DriverNavBar className='absolute w-full bottom-0 z-50' index={1}/>
         </div>
     );
 }
