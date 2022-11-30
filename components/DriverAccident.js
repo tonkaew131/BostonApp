@@ -9,7 +9,6 @@ export default function DriverAccident(props) {
                 </div>
                 <div className="flex w-full mt-4">
                     <button className="bg-primaryMain text-white px-8 py-3 rounded-full m-auto">รายางาน</button>
-
                 </div>
             </div>
         </div>
