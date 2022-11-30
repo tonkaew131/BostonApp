@@ -3,7 +3,7 @@ import DriverNavBar from "../../../components/DriverNavBar";
 
 function ChatBox(props) {
     return (<div className={`flex ${props.index % 2 ? 'bg-gray-500' : 'bg-gray-600'} py-3`}>
-        <Link href="/driver/message" className="flex">
+        <Link href={`/driver/message/${props.id}`} className="flex">
             <div className={`mx-4 ${props.name ? '' : 'opacity-0'}`}>
                 <svg width="78" height="78" viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="39" cy="39" r="39" fill="#D9D9D9" />
@@ -27,7 +27,7 @@ function ChatBox(props) {
 }
 
 const chatData = [
-    { name: 'อธิชา เล็กสรรเสริญ', chat: 'คุณพี่ปาดหน้ารถกระผมหรอ', id: '0' },
+    { name: 'อธิชา เล็กสรรเสริญ', chat: 'I\'m find I\'m ok better than the yesterday', id: '0' },
     { name: 'พิขานนท์ ทวีพิยทนันท์', chat: 'ของมายังครับ', id: '1' },
     { name: 'อุษณีย์​ โกมาศ', chat: 'สวัสดีค่ะ ใกล้่ถึงยังคะ', id: '2' },
     { name: 'โมกข์ มาอาจ', chat: 'ขอบคุณมากครับ', id: '3' },
@@ -40,7 +40,7 @@ export default function DriverContact() {
             <p className="text-xl ml-[10%]">ข้อความ</p>
         </div>
         {chatData.map((e, idx) => {
-            return <ChatBox key={e.name} name={e.name} message={e.chat} index={idx} />
+            return <ChatBox key={e.id} id={e.id} name={e.name} message={e.chat} index={idx} />
         })}
         <DriverNavBar className='absolute bottom-0 w-full' index={2}/>
     </div>);
