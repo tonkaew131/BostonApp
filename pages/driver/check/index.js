@@ -11,9 +11,13 @@ function CheckListCard(props) {
 const checkList = [
     {
         name: '1. เข้างาน / 5. เลิกงาน',
-        svg: (<div className="w-full h-full"><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
+        svg: (<div className="w-full h-full"><svg className="object-contain" xmlns="http://www.w3.org/2000/svg" height="48" width="48">
             <path d="M13.55 42 4 32.45l9.6-9.6 2.1 2.1-6 6h32.45v3H9.7l5.95 5.95Zm20.9-16.85-2.1-2.1 5.95-5.95H5.85v-3H38.3l-6-6L34.4 6l9.6 9.6Z" />
         </svg></div>)
+    },
+    {
+        name: '2. ตรวจสอบสภาพรถ',
+        svg: (<div></div>)
     }
 ];
 export default function DriverCheck() {
