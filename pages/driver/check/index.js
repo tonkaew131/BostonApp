@@ -17,10 +17,9 @@ const checkList = [
 
         name: '3. ตรวจสภาพรถ',
         svg: (<div>
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-32 h-auto">
             <path d="M18.9 35.7L7.70001 24.5L9.85001 22.35L18.9 31.4L38.1 12.2L40.25 14.35L18.9 35.7Z" fill="black"/>
             </svg>
-
         </div>),
     }
 ];
