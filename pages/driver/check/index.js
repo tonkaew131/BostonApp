@@ -13,7 +13,15 @@ const checkList = [
         name: '1. เข้างาน / 5. เลิกงาน',
         svg: (<div className="w-full h-full"><svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
             <path d="M13.55 42 4 32.45l9.6-9.6 2.1 2.1-6 6h32.45v3H9.7l5.95 5.95Zm20.9-16.85-2.1-2.1 5.95-5.95H5.85v-3H38.3l-6-6L34.4 6l9.6 9.6Z" />
-        </svg></div>)
+        </svg></div>),
+
+        name: '3. ตรวจสภาพรถ',
+        svg: (<div>
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.9 35.7L7.70001 24.5L9.85001 22.35L18.9 31.4L38.1 12.2L40.25 14.35L18.9 35.7Z" fill="black"/>
+            </svg>
+
+        </div>),
     }
 ];
 export default function DriverCheck() {
@@ -38,6 +46,9 @@ export default function DriverCheck() {
             </svg>
         </div>
 
+        <div>
+
+        </div>
         {checkList.map((e, idx) => {
             return <CheckListCard key={idx} name={e.name} icon={e.svg} />
         })}
