@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+
 import { useEffect, useState } from "react";
+
 import DriverNavBar from "../../../components/DriverNavBar";
 
 const chatHistory = {
@@ -13,7 +15,6 @@ const chatHistory = {
     {
       text: "I'm find I'm ok better than the yesterday",
       type: "receiver",
-      
     },
   ],
   1: [
@@ -22,10 +23,6 @@ const chatHistory = {
       type: "sender",
       tel: "0863102395"
     },
-    // {
-    //     text: 'that ok',
-    //     type: 'receiver'
-    // }
   ],
   2: [
     {
@@ -33,10 +30,10 @@ const chatHistory = {
       type: "sender",
       tel: "0832418558"
     },
-    // {
-    //     text: 'สวัสดีค่ะ ใกล้ถึงหรือยังคะ',
-    //     type: 'receiver'
-    // }
+    {
+      text: '... 💀',
+      type: 'receiver'
+    }
   ],
   3: [
     {
@@ -45,8 +42,8 @@ const chatHistory = {
       tel: "0863102395"
     },
     {
-      // text: 'that ok',
-      // type: 'receiver'
+      text: '👌',
+      type: 'receiver'
     },
   ],
   4: [
@@ -90,9 +87,9 @@ function SenderCard(props) {
           />
         </svg>
       </div>
-      <div className="p-5 text-xl bg-black text-white rounded-xl max-w-[70%]">
+      <div className="p-3 text-xl bg-black text-white rounded-xl max-w-[70%]">
         <p className="underline w-full">{props.sender}</p>
-        <p className="mt-4 block truncate">{props.text}</p>
+        <p className="mt-4 block">{props.text}</p>
       </div>
     </div>
   );
@@ -103,9 +100,9 @@ function ReceiverCard(props) {
 
   return (
     <div className="text-black flex m-5 w-full">
-      <div className="p-5 text-xl bg-black text-white rounded-xl max-w-[80%] m-auto mr-12 text-right">
+      <div className="p-3 text-xl bg-black text-white rounded-xl max-w-[80%] m-auto mr-12 text-right">
         <p className="underline w-full">คุณ</p>
-        <p className="mt-4 block truncate">{props.text}</p>
+        <p className="mt-4 block">{props.text}</p>
       </div>
     </div>
   );
@@ -128,7 +125,7 @@ export default function DriverMessage() {
       <div className="h-screen w-screen bg-white">
         {/* header */}
         {/* return */}
-        <div className="bg-primaryMain h-[8%] w-full flex  items-center text-2xl">
+        <div className="bg-primaryMain h-[8%] w-full flex  items-center text-xl">
           <Link href="/driver/contact" className="flex ml-4">
             <svg
               className="my-auto mr-4"
@@ -144,25 +141,25 @@ export default function DriverMessage() {
               />
             </svg>
           </Link>
-          
-          {/* name */}
+
+          {/* Name */}
           <p className="mx-auto">{name}</p>
-          
-          {/* phone icons */}
+
+          {/* Phone Icons */}
           <a href={`tel:${tel}`}>
             <svg width="54" height="54" viewBox="0 0 54 54" fill="white" xmlns="http://www.w3.org/2000/svg"
-                    className="mr-5 w-10 my-auto">
-                    <g clip-path="url(#clip0_78_2)">
-                        <path d="M53.364 40.908C51.356 37.112 44.383 32.996 44.076 32.816C43.18 32.306 42.245 32.036 41.37 32.036C40.069 32.036 39.004 32.632 38.359 33.716C37.339 34.936 36.074 36.362 35.767 36.583C33.391 38.195 31.531 38.012 29.473 35.954L17.987 24.467C15.942 22.422 15.754 20.539 17.355 18.176C17.579 17.867 19.005 16.601 20.225 15.58C21.003 15.117 21.537 14.429 21.771 13.585C22.082 12.462 21.853 11.141 21.119 9.854C20.946 9.558 16.828 2.584 13.034 0.576998C12.326 0.201998 11.528 0.0039978 10.728 0.0039978C9.41003 0.0039978 8.17003 0.517998 7.23803 1.449L4.70003 3.986C0.686029 7.999 -0.766971 12.548 0.379029 17.506C1.33503 21.638 4.12103 26.035 8.66103 30.574L23.366 45.279C29.112 51.025 34.59 53.939 39.648 53.939C39.648 53.939 39.648 53.939 39.649 53.939C43.369 53.939 46.837 52.358 49.954 49.241L52.491 46.704C54.033 45.163 54.383 42.833 53.364 40.908Z" />
-                    </g>
-                <defs>
-                        <clipPath id="clip0_78_2">
-                            <rect width="53.942" height="53.942" fill="white" />
-                        </clipPath>
-                </defs>
+              className="mr-5 w-10 my-auto">
+              <g clip-path="url(#clip0_78_2)">
+                <path d="M53.364 40.908C51.356 37.112 44.383 32.996 44.076 32.816C43.18 32.306 42.245 32.036 41.37 32.036C40.069 32.036 39.004 32.632 38.359 33.716C37.339 34.936 36.074 36.362 35.767 36.583C33.391 38.195 31.531 38.012 29.473 35.954L17.987 24.467C15.942 22.422 15.754 20.539 17.355 18.176C17.579 17.867 19.005 16.601 20.225 15.58C21.003 15.117 21.537 14.429 21.771 13.585C22.082 12.462 21.853 11.141 21.119 9.854C20.946 9.558 16.828 2.584 13.034 0.576998C12.326 0.201998 11.528 0.0039978 10.728 0.0039978C9.41003 0.0039978 8.17003 0.517998 7.23803 1.449L4.70003 3.986C0.686029 7.999 -0.766971 12.548 0.379029 17.506C1.33503 21.638 4.12103 26.035 8.66103 30.574L23.366 45.279C29.112 51.025 34.59 53.939 39.648 53.939C39.648 53.939 39.648 53.939 39.649 53.939C43.369 53.939 46.837 52.358 49.954 49.241L52.491 46.704C54.033 45.163 54.383 42.833 53.364 40.908Z" />
+              </g>
+              <defs>
+                <clipPath id="clip0_78_2">
+                  <rect width="53.942" height="53.942" fill="white" />
+                </clipPath>
+              </defs>
             </svg>
-        </a>
-          
+          </a>
+
         </div>
 
         <div className="w-full overflow-clip">
