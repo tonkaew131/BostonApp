@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DriverAccident from "../../../components/DriverAccident";
 import DriverNavBar from "../../../components/DriverNavBar";
 
 
@@ -25,9 +26,8 @@ export default function DriverMap() {
                         <path d="M22.5 38V25.5H10v-3h12.5V10h3v12.5H38v3H25.5V38Z" />
                     </svg>
                 </div>
-
             </div>
-            <DriverNavBar className='absolute w-full bottom-0 z-50' />
+            <DriverNavBar className='absolute w-full bottom-0 z-50' index={1}/>
         </div>
     );
 }
