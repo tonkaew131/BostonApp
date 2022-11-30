@@ -75,7 +75,7 @@ export default function DriverMap() {
     const getSpeed = async () => {
         const coordinates = await getCurrentPosition();
         const distance = distanceTwoPoints(coordinates.coords.latitude, coordinates.coords.longitude, lastLocation.lat, lastLocation.lon);
- 
+
         const timeSecond = (coordinates.timestamp - lastLocation.timestamp) / 1000;
         const speedMps = distance / timeSecond;
         const speedKph = speedMps * 3600 / 1000;
@@ -85,6 +85,21 @@ export default function DriverMap() {
         return coordinates;
     }
 
+    const [watchId, setWatchId] = useState();
+    const getCurrentPositionWatch = async () => {
+        if (watchId) {
+            await Geolocation.clearWatch({id: watchId});
+            setWatchId(null);
+        }
+
+        const _watchId = await Geolocation.watchPosition({
+            enableHighAccuracy: true, timeout: 30000, maximumAge: Infinity
+        }, (pos) => { });
+        setWatchId(_watchId);
+
+        await Geolocation.clearWatch({id: watchId});
+    }
+
     const getCurrentPosition = async () => {
         const permission = await checkPermissions();
         if (!permission) {
@@ -92,9 +107,12 @@ export default function DriverMap() {
             return;
         }
 
-        const coordinates = await Geolocation.getCurrentPosition();
+        // await getCurrentPositionWatch();
+        const coordinates = await Geolocation.getCurrentPosition({
+            enableHighAccuracy: true, timeout: 30000, maximumAge: Infinity
+        });
 
-        console.log('Getting Geolocation ...', coordinates.timestamp);
+        console.log('Getting Geolocation ...', coordinates.timestamp, coordinates.coords.latitude, coordinates.coords.longitude);
         return coordinates;
     };
     getCurrentPosition();
