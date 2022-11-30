@@ -11,6 +11,9 @@ module.exports = {
         'primaryMain': '#00BDF8',
         'messegeBox' : '#9CB8C8',
         'messege_box' : '#D9D9D9'
+      },
+      fontFamily: {
+        Kanit: ['Kanit', 'sans-serif'],
       }
     },
   },
