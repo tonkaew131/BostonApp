@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function CheckListCard(props) {
     return (<div className="w-[95%] h-[12%] bg-white text-black m-auto rounded-lg flex mb-2">
         <div className="h-full w-min flex">
@@ -54,6 +56,13 @@ const checkList = [
 ];
 export default function DriverCheck() {
     return (<div className="w-screen h-screen bg-primaryBase">
+        <div className="absolute top-6 left-6">
+            <Link href="/driver/home">
+            <svg width="36" height="24" viewBox="0 0 36 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 24L0.0499878 12.05L12 0.0999756L14.15 2.24998L5.79999 10.6H33V1.99998H36V13.55H5.84999L14.15 21.85L12 24Z" />
+            </svg>
+            </Link>
+        </div>
         <p className="text-center text-3xl pt-4 text-primaryMain">ตรวจสภาพรถ</p>
         <div className="py-5 my-3">
             <svg className="m-auto scale-150" width="245" height="33" viewBox="0 0 245 33" fill="none" xmlns="http://www.w3.org/2000/svg">

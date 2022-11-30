@@ -2,7 +2,7 @@ import Link from "next/link";
 import DriverNavBar from "../../../components/DriverNavBar"
 export default function DriverHome() {
     return (
-        <div className="bg-primaryBase w-screen h-screen text-font">
+        <div className="bg-primaryBase w-screen h-screen text-font text-white">
             <div>
                 <p className="text-center pt-8 text-3xl">ข้อมูล</p>
                 <svg className="flex justify-center w-full pt-16 h-72" width="193" height="184" viewBox="0 0 193 184" fill="none" xmlns="http://www.w3.org/2000/svg">
