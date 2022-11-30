@@ -1,3 +1,4 @@
+import Link from "next/link";
 import DriverNavBar from "../../../components/DriverNavBar"
 export default function DriverHome() {
     return (
@@ -17,12 +18,14 @@ export default function DriverHome() {
                         <p className="text-2xl">รายละเอียดงาน</p>
                         <p className="text-2xl">ที่อยู่จัดส่งงาน</p>
                     </div>
-                    <button className="w-32 bg-white h-20 rounded-lg text-black text-3xl hover:bg-primaryMain">
-                        ทำงาน
-                    </button>
+                    <Link href="/driver/check">
+                        <button className="w-32 bg-white h-20 rounded-lg text-black text-3xl hover:bg-primaryMain">
+                            ทำงาน
+                        </button>
+                    </Link>
                 </div>
-                
-                <DriverNavBar className="absolute bottom-0 w-full" index={0}/>
+
+                <DriverNavBar className="absolute bottom-0 w-full" index={0} />
             </div>
         </div>
     );
