@@ -42,6 +42,6 @@ export default function DriverContact() {
         {chatData.map((e, idx) => {
             return <ChatBox key={e.name} name={e.name} message={e.chat} index={idx} />
         })}
-        <DriverNavBar className='absolute bottom-0 w-full' />
+        <DriverNavBar className='absolute bottom-0 w-full' index={2}/>
     </div>);
 }

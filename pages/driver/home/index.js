@@ -22,7 +22,7 @@ export default function DriverHome() {
                     </button>
                 </div>
                 
-                <DriverNavBar className="absolute bottom-0 w-full"></DriverNavBar>
+                <DriverNavBar className="absolute bottom-0 w-full" index={0}/>
             </div>
         </div>
     );
