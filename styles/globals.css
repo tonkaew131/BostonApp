@@ -4,20 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@media only screen and (max-width: 600px) {
-  html,
-  body {
-    max-width: 1080px;
-    max-height: 2340px;
-    padding: 0;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  
-    font-family: Kanit, 'san-serif';
-  }
-}
-
 html,
 body {
   padding: 0;
