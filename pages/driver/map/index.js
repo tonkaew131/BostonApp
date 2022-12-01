@@ -72,9 +72,11 @@ export default function DriverMap() {
         return true;
     }
 
-    const getSpeed = async () => {
-        const coordinates = await getCurrentPosition();
+    const getSpeed = async (coordinates) => {
+        if (!coordinates) return;
+    
         const distance = distanceTwoPoints(coordinates.coords.latitude, coordinates.coords.longitude, lastLocation.lat, lastLocation.lon);
+        console.log(coordinates.coords.latitude, coordinates.coords.longitude, lastLocation.lat, lastLocation.lon, distance);
 
         const timeSecond = (coordinates.timestamp - lastLocation.timestamp) / 1000;
         const speedMps = distance / timeSecond;
@@ -86,54 +88,41 @@ export default function DriverMap() {
     }
 
     const [watchId, setWatchId] = useState();
-    const getCurrentPositionWatch = async () => {
-        if (watchId) {
-            await Geolocation.clearWatch({id: watchId});
-            setWatchId(null);
-        }
+    const getCurrentPosition = async (coordinates) => {
+        if (!coordinates) return;
 
-        const _watchId = await Geolocation.watchPosition({
-            enableHighAccuracy: true, timeout: 30000, maximumAge: Infinity
-        }, (pos) => { });
-        setWatchId(_watchId);
-
-        await Geolocation.clearWatch({id: watchId});
-    }
-
-    const getCurrentPosition = async () => {
         const permission = await checkPermissions();
         if (!permission) {
             setSpeed('-');
             return;
         }
 
-        // await getCurrentPositionWatch();
-        const coordinates = await Geolocation.getCurrentPosition({
-            enableHighAccuracy: true, timeout: 30000, maximumAge: Infinity
+        await getSpeed(coordinates);
+        setLastLocation({
+            lat: coordinates.coords.latitude,
+            lon: coordinates.coords.longitude,
+            timestamp: coordinates.timestamp
         });
 
-        console.log('Getting Geolocation ...', coordinates.timestamp, coordinates.coords.latitude, coordinates.coords.longitude);
         return coordinates;
     };
-    getCurrentPosition();
 
     useEffect(() => {
         checkPermissions();
 
-        console.log('register interval')
-        intervalId.current = setInterval(async () => {
-            const coordinates = await getSpeed();
+        async function registerWatchPosition() {
+            const id = await Geolocation.watchPosition({
+                enableHighAccuracy: true, timeout: 30000, maximumAge: Infinity
+            }, (c) => getCurrentPosition(c));
 
-            setLastLocation({
-                lat: coordinates.coords.latitude,
-                lon: coordinates.coords.longitude,
-                timestamp: coordinates.timestamp
-            });
-        }, 5000);
+            setWatchId(id);
+        }
+        registerWatchPosition();
 
         return () => {
-            clearInterval(intervalId.current);
-            console.log('unregister interval');
+            if (watchId) {
+                Geolocation.clearWatch({ id: watchId });
+            }
         };
     }, []);
 
