@@ -40,6 +40,7 @@ export default function DriverHome() {
                         </clipPath>
                     </defs>
                 </svg>
+
             </div>
 
             <div className="flex">

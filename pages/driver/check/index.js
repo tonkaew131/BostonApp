@@ -83,6 +83,9 @@ export default function DriverCheck() {
             </svg>
         </div>
 
+        <div>
+
+        </div>
         {checkList.map((e, idx) => {
             return <CheckListCard key={idx} name={e.name} icon={e.svg} />
         })}

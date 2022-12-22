@@ -17,6 +17,8 @@ function ChatBox(props) {
                         </clipPath>
                     </defs>
                 </svg>
+
+                
             </div>
             <div className="text-white w-full">
                 <p className="text-xl">{props.name}</p>
